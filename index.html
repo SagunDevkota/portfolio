@@ -3,103 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sagun Devkota | Python/Django Developer</title>
+    <meta name="description" content="Sagun Devkota - Python/Django Developer with 3+ years of experience building scalable backend systems and web applications. Specializing in Django, REST APIs, PostgreSQL, and microservices architecture.">
+    <meta name="keywords" content="Python Developer, Django Developer, Backend Developer, Web Developer, Software Engineer, REST API, PostgreSQL, Freelance Developer, Nepal">
+    <meta name="author" content="Sagun Devkota">
+    <title>Sagun Devkota | Python/Django Developer | Backend Systems Architect</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="crt-screen">
-        <div class="scanlines"></div>
-        <div class="content">
-            <!-- Header/Navigation -->
-            <header class="terminal-header">
-                <div class="terminal-bar">
-                    <span class="terminal-title">PORTFOLIO.EXE</span>
-                    <div class="terminal-controls">
-                        <span class="control-btn minimize">_</span>
-                        <span class="control-btn maximize">□</span>
-                        <span class="control-btn close">×</span>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">Sagun Devkota</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Portfolio</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Sagun Devkota</span></h1>
+                <p class="hero-subtitle">Python/Django Developer & Backend Systems Architect</p>
+                <p class="hero-description">Building scalable backend systems and robust web applications with 3+ years of experience. Specializing in Django, REST APIs, and microservices architecture.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="images/sagun.jpg" alt="Sagun Devkota" id="linkedin-profile-img" class="photo">
                     </div>
                 </div>
-            </header>
-
-            <!-- Hero Section -->
-            <section id="home" class="hero">
-                <div class="terminal-window">
-                    <div class="terminal-prompt">
-                        <span class="prompt-user">sagun@portfolio</span>
-                        <span class="prompt-symbol">:~$</span>
-                        <span class="typing-text" id="typing-text"></span>
-                        <span class="cursor-blink">█</span>
-                    </div>
-                    <div class="hero-content">
-                        <h1 class="retro-title">
-                            <span class="glitch" data-text="SAGUN DEVKOTA">SAGUN DEVKOTA</span>
-                        </h1>
-                        <p class="retro-subtitle">&gt; Python/Django Developer</p>
-                        <p class="retro-subtitle">&gt; Backend Systems Architect</p>
-                        <p class="retro-subtitle">&gt; 3+ Years Experience</p>
-                        <div class="hero-links">
-                            <a href="#about" class="retro-link">[ABOUT]</a>
-                            <a href="#experience" class="retro-link">[EXPERIENCE]</a>
-                            <a href="#projects" class="retro-link">[PROJECTS]</a>
-                            <a href="#contact" class="retro-link">[CONTACT]</a>
+                <div class="about-text">
+                    <p class="about-intro">
+                        Python/Django developer with <strong>3+ years</strong> of experience building efficient backend systems and scalable web applications. Skilled in optimizing operations, automating processes, and delivering robust solutions using containerization and microservices architecture.
+                    </p>
+                    <p>
+                        I specialize in creating robust backend systems using PostgreSQL, Redis, Elasticsearch, and message brokers. My expertise lies in designing scalable architectures that can handle high-volume traffic while maintaining reliability and performance.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <strong>Location:</strong> Pokhara, Nepal
                         </div>
+                        <div class="detail-item">
+                            <strong>Availability:</strong> Open to opportunities
+                        </div>
+                        <div class="detail-item">
+                            <strong>Experience:</strong> 3+ Years
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="company-name">KaimakiWeb</h3>
+                            <p class="job-title">Python Django Developer</p>
+                        </div>
+                        <span class="experience-date">2022 - Present</span>
+                    </div>
+                    <p class="experience-location">Varese, Italy</p>
+                    <p class="experience-description">
+                        Directed the design of scalable backend systems using Django frameworks in a high-volume logistics environment, integrating over <strong>150 API solutions</strong> that ensured performance and reliability.
+                    </p>
+                    <ul class="achievements-list">
+                        <li>Led development of a Transportation Management System (TMS), optimizing data synchronization workflows by <strong>70%</strong>, supporting <strong>500+ daily shipments</strong>.</li>
+                        <li>Enhanced tracking and monitoring features for a logistics platform, reducing lost tracking incidents by <strong>50%</strong>, impacting <strong>500+ daily deliveries</strong>.</li>
+                        <li>Developed an automated cost calculation system for a logistics firm, reducing manual processing time by <strong>40%</strong> and calculation errors by <strong>25%</strong>, processing <strong>1,000+ transactions daily</strong>.</li>
+                        <li>Built the entire backend of HSE Genius, an SDS/document processing platform, implementing automated parsing and in-house hazard point (HP) calculations with <strong>95%+ data extraction accuracy</strong> and <strong>~90% reduction</strong> in manual processing.</li>
+                    </ul>
+                </div>
                     </div>
                 </div>
             </section>
 
-            <!-- About Section -->
-            <section id="about" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">ABOUT.TXT</span>
-                        <span class="section-toggle">▼</span>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A selection of my recent work showcasing my expertise in backend development and system architecture</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <img src="images/hsegenius.png" alt="HSE Genius" class="photo">
+                        </div>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                    PROFESSIONAL SUMMARY                   ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <p class="terminal-text">
-Python/Django developer with <span class="highlight">3+ years</span> of experience building 
-efficient backend systems and scalable web applications. Skilled in optimizing operations, 
-automating processes, and delivering robust solutions using containerization and microservices 
-architecture. Proficient in PostgreSQL, Redis, Elasticsearch, and message brokers for creating 
-high-performance, distributed systems.
+                    <div class="project-content">
+                        <h3 class="project-name">HSE Genius</h3>
+                        <p class="project-year">2022 - Present</p>
+                        <p class="project-description">
+                            Built the entire backend of an SDS/document processing platform, implementing automated parsing and in-house hazard point calculations with <strong>95%+ data extraction accuracy</strong>.
                         </p>
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                        LOCATION                           ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <p class="terminal-text">
-📍 Pokhara, Nepal<br>
-🏠 Working from home
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Document Processing</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                        <a href="https://hsegenius.com/" target="_blank" rel="noopener noreferrer" class="project-link">View Website →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <img src="images/mandala.png" alt="Mandalaforus" class="photo">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-name">Mandala</h3>
+                        <p class="project-year">2025</p>
+                        <p class="project-description">
+                            Developed Mandala, an AI Executive Coach that lives in Slack and helps all employees prioritize, give feedback, and build high performing teams—right inside their workflow. The intelligent Slackbot provides personalized coaching and guidance to enhance team productivity and performance.
                         </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Slack API</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                        <a href="https://mandalaforus.com/" target="_blank" rel="noopener noreferrer" class="project-link">View Website →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <img src="images/tms.jpg" alt="Transportation Management System" class="photo">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-name">Transportation Management System</h3>
+                        <p class="project-year">2022 - Present</p>
+                        <p class="project-description">
+                            Led development of a TMS, optimizing data synchronization workflows by <strong>70%</strong>, supporting <strong>500+ daily shipments</strong> across Europe.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Logistics</span>
+                            <span class="tech-tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <img src="images/catch-phis.png" alt="Catch-Phis" class="photo">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-name">Catch-Phis</h3>
+                        <p class="project-year">2023 - 2024</p>
+                        <p class="project-description">
+                            Built a phishing detection system for a cybersecurity project, achieving <strong>90% accuracy</strong> in URL analysis, analyzing <strong>100,000+ URLs</strong>.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Cybersecurity</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <a href="https://github.com/sagundevkota/Catch-Phis" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <img src="images/goshopnow.jpg" alt="GoShopNow" class="photo">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-name">GoShopNow</h3>
+                        <p class="project-year">2023</p>
+                        <p class="project-description">
+                            Created an e-commerce platform featuring secure payment integration, user authentication, and product management, achieving <strong>80% code coverage</strong>.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <a href="https://github.com/sagundevkota/GoShopNow" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="#contact" class="btn btn-primary">Have a Project in Mind? Let's Talk</a>
                     </div>
                 </div>
             </section>
 
             <!-- Skills Section -->
-            <section id="skills" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">SKILLS.DAT</span>
-                        <span class="section-toggle">▼</span>
-                    </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                      TECHNICAL SKILLS                     ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
                         <div class="skills-grid">
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Programming & Development</h3>
+                    <h3 class="skill-category-title">Programming & Development</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">Python</span>
                                     <span class="skill-tag">Backend Development</span>
@@ -108,7 +256,7 @@ high-performance, distributed systems.
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Frameworks & APIs</h3>
+                    <h3 class="skill-category-title">Frameworks & APIs</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">Django Framework</span>
                                     <span class="skill-tag">Django REST Framework</span>
@@ -117,7 +265,7 @@ high-performance, distributed systems.
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Database Technologies</h3>
+                    <h3 class="skill-category-title">Database Technologies</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">PostgreSQL</span>
                                     <span class="skill-tag">Redis</span>
@@ -127,7 +275,7 @@ high-performance, distributed systems.
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Tools & Testing</h3>
+                    <h3 class="skill-category-title">Tools & Testing</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">Celery</span>
                                     <span class="skill-tag">Pytest</span>
@@ -137,7 +285,7 @@ high-performance, distributed systems.
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Web Technologies</h3>
+                    <h3 class="skill-category-title">Web Technologies</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">HTML</span>
                                     <span class="skill-tag">CSS</span>
@@ -145,300 +293,154 @@ high-performance, distributed systems.
                                 </div>
                             </div>
                             <div class="skill-category">
-                                <h3 class="skill-title">&gt; Security</h3>
+                    <h3 class="skill-category-title">Security</h3>
                                 <div class="skill-tags">
                                     <span class="skill-tag">Security Best Practices</span>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Experience Section -->
-            <section id="experience" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">EXPERIENCE.LOG</span>
-                        <span class="section-toggle">▼</span>
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3 class="education-school">Pokhara University</h3>
+                <p class="education-degree">Bachelor of Engineering (B.E.), Software Engineering</p>
+                <p class="education-date">2019 - 2024</p>
+                <p class="education-gpa">GPA: <strong>3.76/4.0</strong></p>
+                <p class="education-coursework"><strong>Coursework:</strong> Data Structures, Web Development, Database Management</p>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                  PROFESSIONAL EXPERIENCE                  ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <div class="experience-item">
-                            <div class="exp-header">
-                                <h3 class="exp-company">KaimakiWeb</h3>
-                                <span class="exp-location">Varese, Italy</span>
-                                <span class="exp-date">2022 - Present</span>
+                </div>
+            </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title">Certificates & Awards</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <h4 class="award-title">Django Web Framework Certificate</h4>
+                    <p class="award-desc">Completed a comprehensive course in building and securing web applications with Django</p>
+                    </div>
+                <div class="award-item">
+                    <div class="award-icon">🥈</div>
+                    <h4 class="award-title">Second Place - Coding Competition 2023</h4>
                             </div>
-                            <div class="exp-role">Python Django Developer</div>
-                            <div class="exp-description">
-                                Directed the design of scalable backend systems using Django frameworks 
-                                in a high-volume logistics environment, integrating over 
-                                <span class="highlight">150 API solutions</span> that ensured performance and reliability.
-                            </div>
-                            <div class="exp-achievements">
-                                <div class="achievement">
-                                    <span class="achievement-icon">▶</span>
-                                    Led development of a Transportation Management System (TMS), optimizing 
-                                    data synchronization workflows by <span class="highlight">70%</span>, 
-                                    supporting <span class="highlight">500+ daily shipments</span>.
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">▶</span>
-                                    Enhanced tracking and monitoring features for a logistics platform, 
-                                    reducing lost tracking incidents by <span class="highlight">50%</span>, 
-                                    impacting <span class="highlight">500+ daily deliveries</span>.
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">▶</span>
-                                    Developed an automated cost calculation system for a logistics firm, 
-                                    reducing manual processing time by <span class="highlight">40%</span> and 
-                                    calculation errors by <span class="highlight">25%</span>, processing 
-                                    <span class="highlight">1,000+ transactions daily</span>.
-                                </div>
-                                <div class="achievement">
-                                    <span class="achievement-icon">▶</span>
-                                    Built the entire backend of HSE Genius, an SDS/document processing platform, 
-                                    implementing automated parsing and in-house hazard point (HP) calculations 
-                                    with <span class="highlight">95%+ data extraction accuracy</span> and 
-                                    <span class="highlight">~90% reduction</span> in manual processing.
-                                </div>
-                            </div>
+                <div class="award-item">
+                    <div class="award-icon">🥈</div>
+                    <h4 class="award-title">Second Place - TECH PARV A: Code with Coffee (Pro. Level) 2024</h4>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Education Section -->
-            <section id="education" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">EDUCATION.INFO</span>
-                        <span class="section-toggle">▼</span>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <p class="section-subtitle">Testimonials and feedback from clients and colleagues</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Sagun is a very detail oriented, kind and intelligent developer. I would recommend working with him 10/10 times."</p>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                       EDUCATION                           ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <div class="education-item">
-                            <h3 class="edu-school">Pokhara University</h3>
-                            <div class="edu-degree">Bachelor of Engineering (B.E.), Software Engineering</div>
-                            <div class="edu-date">2019 - 2024</div>
-                            <div class="edu-gpa">GPA: <span class="highlight">3.76/4.0</span></div>
-                            <div class="edu-coursework">
-                                <strong>Coursework:</strong> Data Structures, Web Development, Database Management
-                            </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <strong>Tarun G.</strong>
+                            <span>Founder of Mandala | Upwork</span>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">PROJECTS.DIR</span>
-                        <span class="section-toggle">▼</span>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Working with Sagun as a Python developer has been outstanding. Their expertise in Python significantly enhanced our project outcomes. Exceptional in solving complex problems, Sagun also excels in communicating complex technical concepts effectively. Beyond technical skills, their professionalism and work ethic are commendable."</p>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                       PROJECTS                            ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <div class="projects-grid">
-                            <div class="project-card">
-                                <div class="project-header">
-                                    <h3 class="project-name">Catch-Phis</h3>
-                                    <span class="project-year">2023 - 2024</span>
-                                    <span class="collapse-toggle">[-]</span>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-description">
-                                        Built a phishing detection system for a cybersecurity project, achieving 
-                                        <span class="highlight">90% accuracy</span> in URL analysis, analyzing 
-                                        <span class="highlight">100,000+ URLs</span>.
-                                    </div>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Django</span>
-                                        <span class="tech-tag">Cybersecurity</span>
-                                        <span class="tech-tag">ML</span>
-                                    </div>
-                                    <a href="https://github.com/sagundevkota/Catch-Phis" target="_blank" class="project-link">
-                                        [VIEW ON GITHUB] →
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-card">
-                                <div class="project-header">
-                                    <h3 class="project-name">GoShopNow</h3>
-                                    <span class="project-year">2023</span>
-                                    <span class="collapse-toggle">[-]</span>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-description">
-                                        Created an e-commerce platform featuring secure payment integration, user 
-                                        authentication, and product management, achieving 
-                                        <span class="highlight">80% code coverage</span>.
-                                    </div>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Python</span>
-                                        <span class="tech-tag">Django</span>
-                                        <span class="tech-tag">REST API</span>
-                                    </div>
-                                    <a href="https://github.com/sagundevkota/GoShopNow" target="_blank" class="project-link">
-                                        [VIEW ON GITHUB] →
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-card">
-                                <div class="project-header">
-                                    <h3 class="project-name">HSE Genius</h3>
-                                    <span class="project-year">2022 - Present</span>
-                                    <span class="collapse-toggle">[-]</span>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-description">
-                                        Built the entire backend of an SDS/document processing platform, implementing 
-                                        automated parsing and in-house hazard point calculations with 
-                                        <span class="highlight">95%+ data extraction accuracy</span>.
-                                    </div>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Django</span>
-                                        <span class="tech-tag">Document Processing</span>
-                                        <span class="tech-tag">Automation</span>
-                                    </div>
-                                    <a href="https://hsegenius.com/" target="_blank" class="project-link">
-                                        [VIEW WEBSITE] →
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-card">
-                                <div class="project-header">
-                                    <h3 class="project-name">Transportation Management System</h3>
-                                    <span class="project-year">2022 - Present</span>
-                                    <span class="collapse-toggle">[-]</span>
-                                </div>
-                                <div class="project-content">
-                                    <div class="project-description">
-                                        Led development of a TMS, optimizing data synchronization workflows by 
-                                        <span class="highlight">70%</span>, supporting 
-                                        <span class="highlight">500+ daily shipments</span> across Europe.
-                                    </div>
-                                    <div class="project-tech">
-                                        <span class="tech-tag">Django</span>
-                                        <span class="tech-tag">Logistics</span>
-                                        <span class="tech-tag">API Integration</span>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <strong>Angelo M.</strong>
+                            <span>Project Manager | Upwork</span>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Certificates & Awards Section -->
-            <section id="awards" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">AWARDS.CER</span>
-                        <span class="section-toggle">▼</span>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I had the privilege of collaborating with Sagun Devkota on the development of an AI-powered waste classification software solution. They transformed complex data from SDS into accurate and explainable decisions, demonstrating exemplary attention to code quality and regulatory compliance. A reliable, swift, and results-oriented professional."</p>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                  CERTIFICATES & AWARDS                    ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <div class="awards-list">
-                            <div class="award-item">
-                                <span class="award-icon">🏆</span>
-                                <div class="award-content">
-                                    <h4 class="award-title">Django Web Framework Certificate</h4>
-                                    <p class="award-desc">Completed a comprehensive course in building and securing web applications with Django</p>
-                                </div>
-                            </div>
-                            <div class="award-item">
-                                <span class="award-icon">🥈</span>
-                                <div class="award-content">
-                                    <h4 class="award-title">Second Place - Coding Competition 2023</h4>
-                                </div>
-                            </div>
-                            <div class="award-item">
-                                <span class="award-icon">🥈</span>
-                                <div class="award-content">
-                                    <h4 class="award-title">Second Place - TECH PARV A: Code with Coffee (Pro. Level) 2024</h4>
-                                </div>
-                            </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <strong>Davide Tramonto</strong>
+                            <span>General Manager, TRAMONTO ANTONIO SRL | LinkedIn</span>
                         </div>
+                    </div>
+                </div>
                     </div>
                 </div>
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="section">
-                <div class="terminal-window">
-                    <div class="terminal-header-small">
-                        <span class="terminal-title-small">CONTACT.CMD</span>
-                        <span class="section-toggle">▼</span>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:sagundevkota07@gmail.com">sagundevkota07@gmail.com</a>
                     </div>
-                    <div class="terminal-content">
-                        <pre class="ascii-art">
-╔═══════════════════════════════════════════════════════════╗
-║                      GET IN TOUCH                         ║
-╚═══════════════════════════════════════════════════════════╝
-                        </pre>
-                        <div class="contact-info">
                             <div class="contact-item">
-                                <span class="contact-label">&gt; Email:</span>
-                                <a href="mailto:sagundevkota07@gmail.com" class="contact-link">sagundevkota07@gmail.com</a>
+                        <h3>Location</h3>
+                        <p>Pokhara, Nepal</p>
                             </div>
                             <div class="contact-item">
-                                <span class="contact-label">&gt; Location:</span>
-                                <span class="contact-text">Pokhara, Nepal</span>
-                            </div>
+                        <h3>Social</h3>
+                        <div class="contact-social">
+                            <a href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                            <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer" aria-label="Upwork">Upwork</a>
                         </div>
-                        <div class="social-links">
-                            <a href="https://github.com/sagundevkota" target="_blank" class="social-link">
-                                <span class="social-icon">[GITHUB]</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" class="social-link">
-                                <span class="social-icon">[LINKEDIN]</span>
-                            </a>
-                            <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" class="social-link">
-                                <span class="social-icon">[UPWORK]</span>
-                            </a>
-                        </div>
-                        <div class="terminal-prompt-footer">
-                            <span class="prompt-user">sagun@portfolio</span>
-                            <span class="prompt-symbol">:~$</span>
-                            <span class="prompt-text">_</span>
-                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
                     </div>
                 </div>
             </section>
 
             <!-- Footer -->
             <footer class="footer">
-                <div class="footer-text">
-                    <p>&gt; Portfolio v1.0 | Built with retro aesthetics</p>
-                    <p>&gt; © 2025 Sagun Devkota. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Sagun Devkota. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Portfolio</a>
+                <a href="#contact">Contact</a>
                 </div>
-                <div class="cv-request">
-                    <a href="mailto:sagundevkota07@gmail.com?subject=CV Request&body=Hello Sagun,%0D%0A%0D%0AI would like to request a copy of your CV.%0D%0A%0D%0AThank you!" class="cv-button">
-                        [REQUEST CV]
-                    </a>
-                </div>
-            </footer>
         </div>
-    </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-
