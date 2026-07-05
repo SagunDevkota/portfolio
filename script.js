@@ -1,90 +1,122 @@
-// Modern Portfolio JavaScript
+// Portfolio interactions
 
-// Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', () => {
+    // ------------------------------------------------------------
+    // Theme toggle (initial theme is set inline in <head> to avoid FOUC)
+    // ------------------------------------------------------------
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const root = document.documentElement;
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+    }
+
+    // Follow OS theme changes unless the user has picked one explicitly
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+
+    // ------------------------------------------------------------
+    // Mobile navigation
+    // ------------------------------------------------------------
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    const setHamburger = (open) => {
+        const spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = open ? 'rotate(45deg) translateY(7px)' : 'none';
+        spans[1].style.opacity = open ? '0' : '1';
+        spans[2].style.transform = open ? 'rotate(-45deg) translateY(-7px)' : 'none';
+    };
+
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            
-            // Animate hamburger icon
-            const spans = navToggle.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+            setHamburger(navMenu.classList.contains('active'));
         });
     }
 
-    // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            const spans = navToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            setHamburger(false);
         });
     });
-});
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-                } else {
-        navbar.classList.remove('scrolled');
+    // ------------------------------------------------------------
+    // Scroll-reveal animation
+    // ------------------------------------------------------------
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.project-card, .experience-item, .skill-row, .testimonial-item, .awards-list li').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(14px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
     }
 });
 
-// Smooth Scrolling for Navigation Links
+// ----------------------------------------------------------------
+// Navbar border on scroll
+// ----------------------------------------------------------------
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ----------------------------------------------------------------
+// Smooth scrolling with navbar offset
+// ----------------------------------------------------------------
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const target = document.querySelector(targetId);
         if (target) {
+            e.preventDefault();
             const navbarHeight = document.getElementById('navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navbarHeight;
-            
             window.scrollTo({
-                top: targetPosition,
+                top: target.offsetTop - navbarHeight,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Active Navigation Link Highlighting
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+// ----------------------------------------------------------------
+// Active navigation link highlighting
+// ----------------------------------------------------------------
+const sections = document.querySelectorAll('section[id], header[id]');
+const allNavLinks = document.querySelectorAll('.nav-link');
 
 function highlightActiveSection() {
     const scrollY = window.pageYOffset;
     const navbarHeight = document.getElementById('navbar').offsetHeight;
 
     sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - navbarHeight - 100;
         const sectionId = section.getAttribute('id');
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
+        if (scrollY > sectionTop && scrollY <= sectionTop + section.offsetHeight) {
+            allNavLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
             });
         }
     });
@@ -92,84 +124,27 @@ function highlightActiveSection() {
 
 window.addEventListener('scroll', highlightActiveSection);
 
-// Contact Form Handling
+// ----------------------------------------------------------------
+// Contact form -> mailto
+// ----------------------------------------------------------------
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            subject: formData.get('subject'),
-            message: formData.get('message')
-        };
 
-        // Create mailto link (you can replace this with actual form submission)
-        const mailtoLink = `mailto:sagundevkota07@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`)}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Show success message (optional)
+        const formData = new FormData(contactForm);
+        const subject = formData.get('subject');
+        const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`;
+
+        window.location.href = `mailto:sagundevkota07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
-        submitButton.textContent = 'Message Sent!';
-        submitButton.style.background = '#10b981';
-        
+        submitButton.textContent = 'Opening your email client…';
+
         setTimeout(() => {
             submitButton.textContent = originalText;
-            submitButton.style.background = '';
             contactForm.reset();
         }, 3000);
     });
 }
-
-// Intersection Observer for Fade-in Animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.project-card, .experience-item, .skill-category, .award-item, .testimonial-item');
-    
-    animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
-
-// Performance: Reduce motion for users who prefer it
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('*').forEach(el => {
-        el.style.animation = 'none';
-        el.style.transition = 'none';
-    });
-}
-
-// Add active class styling via CSS (handled in styles.css)
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: var(--primary-color);
-    }
-    .nav-link.active::after {
-        width: 100%;
-    }
-`;
-document.head.appendChild(style);
