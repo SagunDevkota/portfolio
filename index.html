@@ -191,13 +191,15 @@
                             <span class="project-year">2022 - Present</span>
                         </div>
                         <p class="project-description">
-                            Built the entire backend of an SDS/document processing platform, implementing automated parsing and in-house hazard point calculations with <strong>95%+ data extraction accuracy</strong>.
+                            Multi-tenant HSE SaaS extracting structured hazard data (GHS, CAS, Seveso, ADR) from SDS PDFs with <strong>95%+ accuracy</strong>. Concurrent Celery pipelines with live <strong>SSE progress</strong>, role-based access, and Stripe subscription + credit billing.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
+                            <span class="tech-tag">DRF</span>
+                            <span class="tech-tag">Celery</span>
+                            <span class="tech-tag">Gemini API</span>
                             <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">Document Processing</span>
-                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <a href="https://hsegenius.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow">→</span></a>
                     </div>
@@ -213,13 +215,14 @@
                             <span class="project-year">2025</span>
                         </div>
                         <p class="project-description">
-                            An AI executive coach that lives in Slack, helping employees prioritize, give feedback, and build high-performing teams right inside their workflow.
+                            Multi-workspace Slack bot delivering personalized leadership coaching: an end-to-end <strong>RAG pipeline</strong> (pgvector embeddings, LLM intent analysis), Google Workspace ingestion, a timezone-aware scheduling engine, and <strong>spaCy PII anonymization</strong> before LLM analytics.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">Python</span>
                             <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Slack API</span>
-                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">pgvector</span>
+                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">Slack SDK</span>
                         </div>
                         <a href="https://mandalaforus.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow">→</span></a>
                     </div>
@@ -235,13 +238,14 @@
                             <span class="project-year">2022 - Present</span>
                         </div>
                         <p class="project-description">
-                            A logistics platform managing the full shipment lifecycle across Europe: carrier API integrations, real-time tracking and monitoring, and automated cost calculation for <strong>1,000+ daily transactions</strong>. Private client system.
+                            Logistics TMS with hash-based <strong>CDC sync over ~400K shipment records</strong> (5K+ changes/hour), gapless transactional invoice numbering, a rule-based tariff engine, DHL EDI/customs integrations, and WebSocket progress updates. Private client system.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Django Channels</span>
+                            <span class="tech-tag">DHL EDI</span>
                         </div>
                     </div>
                 </article>
@@ -315,12 +319,14 @@
                         <span class="skill-tag">Django REST Framework</span>
                         <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">Celery</span>
+                        <span class="skill-tag">Django Channels</span>
                     </div>
                 </div>
                 <div class="skill-row">
                     <h3 class="skill-category-title">Data &amp; Infrastructure</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">Redis</span>
                         <span class="skill-tag">Elasticsearch</span>
                         <span class="skill-tag">Docker</span>
