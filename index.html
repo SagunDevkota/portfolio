@@ -7,25 +7,33 @@
     <meta name="description" content="Sagun Devkota - Python/Django Developer with 3+ years of experience building scalable backend systems and web applications. Specializing in Django, REST APIs, PostgreSQL, and microservices architecture.">
     <meta name="keywords" content="Python Developer, Django Developer, Backend Developer, Web Developer, Software Engineer, REST API, PostgreSQL, Freelance Developer, Nepal">
     <meta name="author" content="Sagun Devkota">
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F1420" media="(prefers-color-scheme: dark)">
     <title>Sagun Devkota | Python/Django Developer</title>
-    <script>
-        // Set theme before first paint to avoid a flash of the wrong theme
-        (function () {
-            var saved = localStorage.getItem('theme');
-            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..700,100;1,9..144,400..700,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Loaded in <head> (not deferred) so the saved theme is applied before first paint.
+         Everything else in main.js waits for DOMContentLoaded. -->
+    <script src="main.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#home" class="nav-brand">Sagun Devkota</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ============ Site header / navigation ============ -->
+    <header class="site-header" id="site-header">
+        <nav class="nav container" aria-label="Main">
+            <a href="#home" class="nav-brand">
+                <svg class="nav-brand-mark" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="5.5" fill="currentColor"/>
+                    <path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+                Sagun Devkota
+            </a>
+
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
@@ -34,50 +42,62 @@
                 <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+
             <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Switch between dark and light theme">
-                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="nav-toggle-bar" aria-hidden="true"></span>
                 </button>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-status"><span class="status-dot"></span>Available for freelance &amp; full-time roles</p>
-                <p class="hero-kicker">Sagun Devkota · Python / Django developer · Pokhara (NP)</p>
-                <h1 class="hero-title">Backend systems that <em>hold up</em> in production.</h1>
-                <p class="hero-description">
-                    Four years shipping logistics platforms, document pipelines, and payment-gated
-                    SaaS for clients in Europe and North America. Django, PostgreSQL, Celery,
-                    Redis, from schema design to deployment.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">See selected work</a>
-                    <a href="#contact" class="btn btn-secondary">Hire me</a>
-                    <div class="hero-social">
-                        <a href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
-                        </a>
+    <main id="main">
+        <!-- ============ 0. Hero ============ -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Available for freelance &amp; full-time roles</p>
+                    <p class="hero-kicker"><span class="hero-name">Sagun Devkota</span> · Python / Django developer · Pokhara (NP)</p>
+                    <h1 class="hero-title" id="hero-title">
+                        Backend systems that
+                        <em class="hero-em">hold up<svg class="hero-squiggle" viewBox="0 0 220 18" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 12c18-8 34-8 52-1s34 7 52 0 34-8 52-1 34 7 58-2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></em>
+                        in production.
+                    </h1>
+                    <p class="hero-description">
+                        Four years shipping logistics platforms, document pipelines, and payment-gated
+                        SaaS for clients in Europe and North America. Django, PostgreSQL, Celery,
+                        Redis, from schema design to deployment.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">See selected work</a>
+                        <a href="#contact" class="btn btn-secondary">Hire me</a>
+                        <div class="hero-social">
+                            <a class="social-btn" href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                            <a class="social-btn" href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </a>
+                            <a class="social-btn" href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-proof">
+
+                <div class="hero-card">
+                    <svg class="hero-card-doodle" width="44" height="44" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                        <path d="M24 4c1.6 9.4 5.6 13.4 15 15-9.4 1.6-13.4 5.6-15 15-1.6-9.4-5.6-13.4-15-15 9.4-1.6 13.4-5.6 15-15z" fill="currentColor"/>
+                        <path d="M40 32c.6 3.6 2.4 5.4 6 6-3.6.6-5.4 2.4-6 6-.6-3.6-2.4-5.4-6-6 3.6-.6 5.4-2.4 6-6z" fill="currentColor" opacity=".6"/>
+                    </svg>
                     <a class="upwork-badge" href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.545-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>
                         Top Rated Plus on Upwork
                     </a>
                     <dl class="hero-meta">
@@ -87,47 +107,55 @@
                     </dl>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">01</span>
-                <h2 class="section-title">About</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/sagun.JPG" alt="Sagun Devkota" class="photo">
-                </div>
-                <div class="about-text">
-                    <p class="about-intro">
-                        Python/Django developer with <strong>4+ years</strong> of experience building efficient backend systems and scalable web applications. Skilled in optimizing operations, automating processes, and delivering robust solutions using containerization and microservices architecture.
-                    </p>
-                    <p>
-                        I specialize in creating robust backend systems using PostgreSQL, Redis, Elasticsearch, and message brokers. My expertise lies in designing scalable architectures that can handle high-volume traffic while maintaining reliability and performance.
-                    </p>
-                    <dl class="about-details">
-                        <div class="detail-item"><dt>Location</dt><dd>Pokhara, Nepal</dd></div>
-                        <div class="detail-item"><dt>Availability</dt><dd>Open to opportunities</dd></div>
-                        <div class="detail-item"><dt>Experience</dt><dd>4+ years</dd></div>
-                    </dl>
-                    <a href="#contact" class="btn btn-primary">Let's work together</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Decorative: the Annapurna range above Pokhara, with Machhapuchhre's twin summit -->
+            <svg class="hero-mountains" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+                <circle class="m-sun" cx="1130" cy="70" r="34"/>
+                <path class="m-bird" d="M300 58q8-7 15 0q7-7 15 0M346 82q6-5 11 0q5-5 11 0"/>
+                <path class="m-back" d="M0 240V160l90-34 70 22 92-58 70 40 88-26 70 34 90-64 60 34 52-72 12 14 14-30 52 74 66-26 92 40 96-52 90 50 98-32 84 26 72-18V240Z"/>
+                <path class="m-snow" d="M680 94l52-72 12 14 14-30 30 42-14-4-12 12-12-10-14 16-12-6-16 20z"/>
+                <path class="m-front" d="M0 240v-52c120-26 220 6 340-10s200-34 330-12 210 22 330 4 220-22 440 6v64Z"/>
+                <path class="m-line" d="M0 202c140-20 250 4 380-8s210-28 330-8 230 16 360 0 250-12 370 12"/>
+            </svg>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">02</span>
-                <h2 class="section-title">Experience</h2>
+        <!-- ============ 01. About ============ -->
+        <section id="about" class="section about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">01</span>
+                    <h2 class="section-title" id="about-title">About</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-image reveal">
+                        <img src="images/Sagun.JPG" alt="Sagun Devkota" class="about-photo" width="720" height="900" loading="lazy" decoding="async">
+                    </div>
+                    <div class="about-text reveal">
+                        <p class="about-intro">
+                            Python/Django developer with <strong>4+ years</strong> of experience building efficient backend systems and scalable web applications. Skilled in optimizing operations, automating processes, and delivering robust solutions using containerization and microservices architecture.
+                        </p>
+                        <p>
+                            I specialize in creating robust backend systems using PostgreSQL, Redis, Elasticsearch, and message brokers. My expertise lies in designing scalable architectures that can handle high-volume traffic while maintaining reliability and performance.
+                        </p>
+                        <dl class="about-details">
+                            <div class="detail-item"><dt>Location</dt><dd>Pokhara, Nepal</dd></div>
+                            <div class="detail-item"><dt>Availability</dt><dd>Open to opportunities</dd></div>
+                            <div class="detail-item"><dt>Experience</dt><dd>4+ years</dd></div>
+                        </dl>
+                        <a href="#contact" class="btn btn-primary">Let's work together</a>
+                    </div>
+                </div>
             </div>
-            <div class="experience-timeline">
-                <div class="experience-item">
+        </section>
+
+        <!-- ============ 02. Experience ============ -->
+        <section id="experience" class="section section--alt experience" aria-labelledby="experience-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">02</span>
+                    <h2 class="section-title" id="experience-title">Experience</h2>
+                </div>
+                <article class="experience-item reveal">
                     <div class="experience-header">
                         <div>
                             <h3 class="company-name">KaimakiWeb</h3>
@@ -144,332 +172,371 @@
                         <li>Developed an automated cost calculation system for a logistics firm, reducing manual processing time by <strong>40%</strong> and calculation errors by <strong>25%</strong>, processing <strong>1,000+ transactions daily</strong>.</li>
                         <li>Built the entire backend of HSE Genius, an SDS/document processing platform, implementing automated parsing and in-house hazard point (HP) calculations with <strong>95%+ data extraction accuracy</strong> and <strong>~90% reduction</strong> in manual processing.</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">03</span>
-                <h2 class="section-title">Selected work</h2>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/storagepayback.png" alt="StoragePayback" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">StoragePayback</h3>
-                            <span class="project-year">2026</span>
-                        </div>
-                        <p class="project-description">
-                            Django 6 platform wrapping an external Pyomo battery-storage optimization solver. Runs <strong>~20-min simulations</strong> as Celery tasks with live <strong>SSE progress</strong>, Stripe-gated access, and PDF/Plotly reports. Bilingual EN/FR.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Pyomo</span>
-                        </div>
-                        <a href="https://storagepayback.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow">→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/hsegenius.png" alt="HSE Genius" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">HSE Genius</h3>
-                            <span class="project-year">2022 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            Multi-tenant HSE SaaS extracting structured hazard data (GHS, CAS, Seveso, ADR) from SDS PDFs with <strong>95%+ accuracy</strong>. Concurrent Celery pipelines with live <strong>SSE progress</strong>, role-based access, and Stripe subscription + credit billing.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">DRF</span>
-                            <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">Gemini API</span>
-                            <span class="tech-tag">Stripe</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://hsegenius.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow">→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/mandala.png" alt="Mandala" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">Mandala</h3>
-                            <span class="project-year">2025</span>
-                        </div>
-                        <p class="project-description">
-                            Multi-workspace Slack bot delivering personalized leadership coaching: an end-to-end <strong>RAG pipeline</strong> (pgvector embeddings, LLM intent analysis), Google Workspace ingestion, a timezone-aware scheduling engine, and <strong>spaCy PII anonymization</strong> before LLM analytics.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">pgvector</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">Slack SDK</span>
-                        </div>
-                        <a href="https://mandalaforus.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow">→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/tms.png" alt="Transportation Management System" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">Transportation Management System</h3>
-                            <span class="project-year">2022 - Present</span>
-                        </div>
-                        <p class="project-description">
-                            Logistics TMS with hash-based <strong>CDC sync over ~400K shipment records</strong> (5K+ changes/hour), gapless transactional invoice numbering, a rule-based tariff engine, DHL EDI/customs integrations, and WebSocket progress updates. Private client system.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Celery</span>
-                            <span class="tech-tag">Django Channels</span>
-                            <span class="tech-tag">DHL EDI</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/catch-phis.png" alt="Catch-Phis" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">Catch-Phis</h3>
-                            <span class="project-year">2023 - 2024</span>
-                        </div>
-                        <p class="project-description">
-                            Built a phishing detection system for a cybersecurity project, achieving <strong>90% accuracy</strong> in URL analysis, analyzing <strong>100,000+ URLs</strong>.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Cybersecurity</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                        <a href="https://github.com/sagundevkota/Catch-Phis" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub<span class="arrow">→</span></a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/goshopnow.jpg" alt="GoShopNow" class="photo">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-title-row">
-                            <h3 class="project-name">GoShopNow</h3>
-                            <span class="project-year">2023</span>
-                        </div>
-                        <p class="project-description">
-                            Created an e-commerce platform featuring secure payment integration, user authentication, and product management, achieving <strong>80% code coverage</strong>.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">REST API</span>
-                        </div>
-                        <a href="https://github.com/sagundevkota/GoShopNow" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub<span class="arrow">→</span></a>
-                    </div>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">04</span>
-                <h2 class="section-title">Skills</h2>
-            </div>
-            <div class="skills-list">
-                <div class="skill-row">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                    </div>
+        <!-- ============ 03. Selected work ============ -->
+        <section id="projects" class="section projects" aria-labelledby="projects-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">03</span>
+                    <h2 class="section-title" id="projects-title">Selected work</h2>
                 </div>
-                <div class="skill-row">
-                    <h3 class="skill-category-title">Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Django REST Framework</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Celery</span>
-                        <span class="skill-tag">Django Channels</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <h3 class="skill-category-title">Data &amp; Infrastructure</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">Elasticsearch</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Nginx</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <h3 class="skill-category-title">Tools &amp; Testing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Pytest</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Stripe API</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Recognition Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">05</span>
-                <h2 class="section-title">Education &amp; recognition</h2>
-            </div>
-            <div class="education-content">
-                <div class="education-item">
-                    <h3 class="education-school">Pokhara University</h3>
-                    <p class="education-degree">B.E. Software Engineering</p>
-                    <p class="education-date">2019 - 2024 · GPA 3.76/4.0</p>
-                    <p class="education-coursework">Data Structures · Web Development · Database Management</p>
-                </div>
-                <ul class="awards-list">
-                    <li>
-                        <strong>Django Web Framework Certificate</strong>
-                        <span>Building and securing web applications with Django</span>
-                    </li>
-                    <li>
-                        <strong>Second Place · Coding Competition 2023</strong>
-                    </li>
-                    <li>
-                        <strong>Second Place · TECH PARV A: Code with Coffee (Pro. Level) 2024</strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">06</span>
-                <h2 class="section-title">What clients say</h2>
-            </div>
-            <div class="testimonials-grid">
-                <blockquote class="testimonial-item">
-                    <p class="testimonial-text">Sagun is a very detail oriented, kind and intelligent developer. I would recommend working with him 10/10 times.</p>
-                    <footer class="testimonial-author">
-                        <strong>Tarun G.</strong>
-                        <span>Founder of Mandala · Upwork</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="testimonial-item">
-                    <p class="testimonial-text">Working with Sagun as a Python developer has been outstanding. Their expertise in Python significantly enhanced our project outcomes. Exceptional in solving complex problems, Sagun also excels in communicating complex technical concepts effectively. Beyond technical skills, their professionalism and work ethic are commendable.</p>
-                    <footer class="testimonial-author">
-                        <strong>Angelo M.</strong>
-                        <span>Project Manager · Upwork</span>
-                    </footer>
-                </blockquote>
-                <blockquote class="testimonial-item">
-                    <p class="testimonial-text">I had the privilege of collaborating with Sagun Devkota on the development of an AI-powered waste classification software solution. They transformed complex data from SDS into accurate and explainable decisions, demonstrating exemplary attention to code quality and regulatory compliance. A reliable, swift, and results-oriented professional.</p>
-                    <footer class="testimonial-author">
-                        <strong>Davide Tramonto</strong>
-                        <span>General Manager, TRAMONTO ANTONIO SRL · LinkedIn</span>
-                    </footer>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-head">
-                <span class="section-no">07</span>
-                <h2 class="section-title">Let's build something</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p class="contact-lead">Currently taking on new freelance projects and open to full-time roles. Tell me about yours. I usually reply within a day.</p>
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <a href="mailto:sagundevkota07@gmail.com">sagundevkota07@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>Pokhara, Nepal</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Elsewhere</h3>
-                        <div class="contact-social">
-                            <a href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                            <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer">Upwork</a>
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/storagepayback.png" alt="StoragePayback" width="3024" height="1712" loading="lazy" decoding="async">
                         </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">StoragePayback</h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <p class="project-description">
+                                Django 6 platform wrapping an external Pyomo battery-storage optimization solver. Runs <strong>~20-min simulations</strong> as Celery tasks with live <strong>SSE progress</strong>, Stripe-gated access, and PDF/Plotly reports. Bilingual EN/FR.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">Celery</li>
+                                <li class="tech-tag">Redis</li>
+                                <li class="tech-tag">Stripe</li>
+                                <li class="tech-tag">Docker</li>
+                                <li class="tech-tag">Pyomo</li>
+                            </ul>
+                            <a href="https://storagepayback.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/hsegenius.png" alt="HSE Genius" width="3024" height="1726" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">HSE Genius</h3>
+                                <span class="project-year">2022 - Present</span>
+                            </div>
+                            <p class="project-description">
+                                Multi-tenant HSE SaaS extracting structured hazard data (GHS, CAS, Seveso, ADR) from SDS PDFs with <strong>95%+ accuracy</strong>. Concurrent Celery pipelines with live <strong>SSE progress</strong>, role-based access, and Stripe subscription + credit billing.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">DRF</li>
+                                <li class="tech-tag">Celery</li>
+                                <li class="tech-tag">Gemini API</li>
+                                <li class="tech-tag">Stripe</li>
+                                <li class="tech-tag">PostgreSQL</li>
+                            </ul>
+                            <a href="https://hsegenius.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/mandala.png" alt="Mandala" width="3024" height="1730" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">Mandala</h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <p class="project-description">
+                                Multi-workspace Slack bot delivering personalized leadership coaching: an end-to-end <strong>RAG pipeline</strong> (pgvector embeddings, LLM intent analysis), Google Workspace ingestion, a timezone-aware scheduling engine, and <strong>spaCy PII anonymization</strong> before LLM analytics.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">FastAPI</li>
+                                <li class="tech-tag">PostgreSQL</li>
+                                <li class="tech-tag">pgvector</li>
+                                <li class="tech-tag">LangChain</li>
+                                <li class="tech-tag">Slack SDK</li>
+                            </ul>
+                            <a href="https://mandalaforus.com/" target="_blank" rel="noopener noreferrer" class="project-link">View website<span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/tms.png" alt="Transportation Management System" width="3006" height="1708" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">Transportation Management System</h3>
+                                <span class="project-year">2022 - Present</span>
+                            </div>
+                            <p class="project-description">
+                                Logistics TMS with hash-based <strong>CDC sync over ~400K shipment records</strong> (5K+ changes/hour), gapless transactional invoice numbering, a rule-based tariff engine, DHL EDI/customs integrations, and WebSocket progress updates. Private client system.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">MySQL</li>
+                                <li class="tech-tag">Celery</li>
+                                <li class="tech-tag">Django Channels</li>
+                                <li class="tech-tag">DHL EDI</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/catch-phis.png" alt="Catch-Phis" width="832" height="600" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">Catch-Phis</h3>
+                                <span class="project-year">2023 - 2024</span>
+                            </div>
+                            <p class="project-description">
+                                Built a phishing detection system for a cybersecurity project, achieving <strong>90% accuracy</strong> in URL analysis, analyzing <strong>100,000+ URLs</strong>.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">Cybersecurity</li>
+                                <li class="tech-tag">Machine Learning</li>
+                            </ul>
+                            <a href="https://github.com/sagundevkota/Catch-Phis" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub<span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="images/goshopnow.jpg" alt="GoShopNow" width="3024" height="1740" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-title-row">
+                                <h3 class="project-name">GoShopNow</h3>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <p class="project-description">
+                                Created an e-commerce platform featuring secure payment integration, user authentication, and product management, achieving <strong>80% code coverage</strong>.
+                            </p>
+                            <ul class="project-tech" aria-label="Tech stack">
+                                <li class="tech-tag">Python</li>
+                                <li class="tech-tag">Django</li>
+                                <li class="tech-tag">REST API</li>
+                            </ul>
+                            <a href="https://github.com/sagundevkota/GoShopNow" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub<span class="arrow" aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 04. Skills ============ -->
+        <section id="skills" class="section section--alt skills" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">04</span>
+                    <h2 class="section-title" id="skills-title">Skills</h2>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-row reveal">
+                        <h3 class="skill-category-title">Languages</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Python</li>
+                            <li class="skill-tag">SQL</li>
+                            <li class="skill-tag">JavaScript</li>
+                            <li class="skill-tag">HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row reveal">
+                        <h3 class="skill-category-title">Frameworks</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Django</li>
+                            <li class="skill-tag">Django REST Framework</li>
+                            <li class="skill-tag">FastAPI</li>
+                            <li class="skill-tag">Celery</li>
+                            <li class="skill-tag">Django Channels</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row reveal">
+                        <h3 class="skill-category-title">Data &amp; Infrastructure</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">PostgreSQL</li>
+                            <li class="skill-tag">MySQL</li>
+                            <li class="skill-tag">Redis</li>
+                            <li class="skill-tag">Elasticsearch</li>
+                            <li class="skill-tag">Docker</li>
+                            <li class="skill-tag">Nginx</li>
+                        </ul>
+                    </div>
+                    <div class="skill-row reveal">
+                        <h3 class="skill-category-title">Tools &amp; Testing</h3>
+                        <ul class="skill-tags">
+                            <li class="skill-tag">Pytest</li>
+                            <li class="skill-tag">Git</li>
+                            <li class="skill-tag">Stripe API</li>
+                        </ul>
                     </div>
                 </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send message</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+        <!-- ============ 05. Education & recognition ============ -->
+        <section id="education" class="section education" aria-labelledby="education-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">05</span>
+                    <h2 class="section-title" id="education-title">Education &amp; recognition</h2>
+                </div>
+                <div class="education-content">
+                    <article class="education-item reveal">
+                        <svg class="education-icon" width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                            <path d="M24 8 3 18l21 10 21-10L24 8z" fill="currentColor"/>
+                            <path d="M11 22.5V33c0 3 6 6.5 13 6.5S37 36 37 33V22.5L24 29l-13-6.5z" fill="currentColor" opacity=".55"/>
+                            <path d="M42 19.5V31" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="42" cy="33" r="2.5" fill="currentColor"/>
+                        </svg>
+                        <h3 class="education-school">Pokhara University</h3>
+                        <p class="education-degree">B.E. Software Engineering</p>
+                        <p class="education-date">2019 - 2024 · GPA 3.76/4.0</p>
+                        <p class="education-coursework">Data Structures · Web Development · Database Management</p>
+                    </article>
+                    <ul class="awards-list">
+                        <li class="reveal">
+                            <svg class="award-icon" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="12" r="8" fill="currentColor"/><path d="M10.5 18 8 29l8-4 8 4-2.5-11" fill="currentColor" opacity=".55"/><path d="m16 8 1.2 2.5 2.8.4-2 2 .5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-2 2.8-.4z" style="fill: var(--surface)"/></svg>
+                            <div>
+                                <strong>Django Web Framework Certificate</strong>
+                                <span>Building and securing web applications with Django</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 06. Testimonials ============ -->
+        <section id="testimonials" class="section section--alt testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-no">06</span>
+                    <h2 class="section-title" id="testimonials-title">What clients say</h2>
+                </div>
+                <div class="testimonials-grid">
+                    <figure class="testimonial-item reveal">
+                        <svg class="quote-mark" width="36" height="28" viewBox="0 0 36 28" aria-hidden="true" focusable="false"><path d="M0 28V17C0 7.6 5 1.7 14 0l1.6 3.8C10.5 5.4 8 8.6 7.7 13H14v15H0zm20 0V17c0-9.4 5-15.3 14-17l1.6 3.8C30.5 5.4 28 8.6 27.7 13H34v15H20z" fill="currentColor"/></svg>
+                        <blockquote>
+                            <p class="testimonial-text">Sagun is a very detail oriented, kind and intelligent developer. I would recommend working with him 10/10 times.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Tarun G.</strong>
+                            <span>Founder of Mandala · Upwork</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="testimonial-item reveal">
+                        <svg class="quote-mark" width="36" height="28" viewBox="0 0 36 28" aria-hidden="true" focusable="false"><path d="M0 28V17C0 7.6 5 1.7 14 0l1.6 3.8C10.5 5.4 8 8.6 7.7 13H14v15H0zm20 0V17c0-9.4 5-15.3 14-17l1.6 3.8C30.5 5.4 28 8.6 27.7 13H34v15H20z" fill="currentColor"/></svg>
+                        <blockquote>
+                            <p class="testimonial-text">Working with Sagun as a Python developer has been outstanding. Their expertise in Python significantly enhanced our project outcomes. Exceptional in solving complex problems, Sagun also excels in communicating complex technical concepts effectively. Beyond technical skills, their professionalism and work ethic are commendable.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Angelo M.</strong>
+                            <span>Project Manager · Upwork</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="testimonial-item reveal">
+                        <svg class="quote-mark" width="36" height="28" viewBox="0 0 36 28" aria-hidden="true" focusable="false"><path d="M0 28V17C0 7.6 5 1.7 14 0l1.6 3.8C10.5 5.4 8 8.6 7.7 13H14v15H0zm20 0V17c0-9.4 5-15.3 14-17l1.6 3.8C30.5 5.4 28 8.6 27.7 13H34v15H20z" fill="currentColor"/></svg>
+                        <blockquote>
+                            <p class="testimonial-text">I had the privilege of collaborating with Sagun Devkota on the development of an AI-powered waste classification software solution. They transformed complex data from SDS into accurate and explainable decisions, demonstrating exemplary attention to code quality and regulatory compliance. A reliable, swift, and results-oriented professional.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Davide Tramonto</strong>
+                            <span>General Manager, TRAMONTO ANTONIO SRL · LinkedIn</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="testimonial-item reveal">
+                        <svg class="quote-mark" width="36" height="28" viewBox="0 0 36 28" aria-hidden="true" focusable="false"><path d="M0 28V17C0 7.6 5 1.7 14 0l1.6 3.8C10.5 5.4 8 8.6 7.7 13H14v15H0zm20 0V17c0-9.4 5-15.3 14-17l1.6 3.8C30.5 5.4 28 8.6 27.7 13H34v15H20z" fill="currentColor"/></svg>
+                        <blockquote>
+                            <p class="testimonial-text">It was a pleasure working with Sagun. We finished the project right on the estimated timeline. Sagun provided a very fast turnaround for all questions and clarifications. Communication was great, and the work was clearly defined from start to finish.</p>
+                        </blockquote>
+                        <figcaption class="testimonial-author">
+                            <strong>Peter K.</strong>
+                            <span>Energy Storage Expert · Upwork</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ 07. Contact ============ -->
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="contact-card">
+                    <svg class="contact-doodle" viewBox="0 0 260 120" aria-hidden="true" focusable="false">
+                        <path class="contact-trail" d="M6 104c34-6 52-30 40-48-12-17-38-2-26 16 14 22 64 24 104-6 26-20 52-38 92-42" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 9"/>
+                        <g class="contact-plane" transform="translate(218 8) rotate(12)">
+                            <path d="M0 22 40 0 30 40 19 29 13 38 12 26z" fill="currentColor"/>
+                            <path d="M12 26 40 0 19 29" style="fill: none; stroke: var(--surface)" stroke-width="2" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="section-head">
+                                <span class="section-no">07</span>
+                                <h2 class="section-title" id="contact-title">Let's build something</h2>
+                            </div>
+                            <p class="contact-lead">Currently taking on new freelance projects and open to full-time roles. Tell me about yours. I usually reply within a day.</p>
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <h3>Email</h3>
+                                    <a href="mailto:sagundevkota07@gmail.com" class="contact-email">sagundevkota07@gmail.com</a>
+                                </div>
+                                <div class="contact-item">
+                                    <h3>Location</h3>
+                                    <p>Pokhara, Nepal</p>
+                                </div>
+                                <div class="contact-item">
+                                    <h3>Elsewhere</h3>
+                                    <div class="contact-social">
+                                        <a href="https://github.com/sagundevkota" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                        <a href="https://www.linkedin.com/in/sagun-devkota/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                        <a href="https://www.upwork.com/freelancers/~01945fb1cc080a07b6" target="_blank" rel="noopener noreferrer">Upwork</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Without JS this falls back to a plain mailto submission -->
+                        <form class="contact-form" id="contact-form" action="mailto:sagundevkota07@gmail.com" method="post" enctype="text/plain">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" autocomplete="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" autocomplete="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="site-footer">
+        <svg class="footer-ridge" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M0 40V26l120-12 90 8 110-16 100 14 120-10 60 6 30-14 8 6 10-8 40 16 110-8 120 12 130-14 110 10 140-12 142 14v22z" fill="currentColor"/>
+        </svg>
+        <div class="container footer-inner">
             <p>&copy; 2026 Sagun Devkota · Pokhara, Nepal</p>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer">
                 <a href="#about">About</a>
                 <a href="#projects">Work</a>
                 <a href="#contact">Contact</a>
-            </div>
+            </nav>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

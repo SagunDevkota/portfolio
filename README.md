@@ -1,26 +1,31 @@
-# Retro Terminal Portfolio
+# Sagun Devkota — Portfolio
 
-A retro-style portfolio website with a terminal/CRT monitor aesthetic, showcasing your professional experience and projects.
+Personal portfolio for Sagun Devkota, Python/Django developer. Plain HTML, CSS and JavaScript with no build step.
 
 ## Features
 
-- 🖥️ **Retro Terminal Aesthetic**: Classic green-on-black terminal look with CRT scanline effects
-- ✨ **Interactive Animations**: Typing effects, glitch animations, and smooth transitions
-- 📱 **Responsive Design**: Works beautifully on desktop, tablet, and mobile devices
-- 🎨 **Modern Retro Design**: Combines nostalgic aesthetics with modern web technologies
-- ⚡ **Smooth Scrolling**: Elegant navigation between sections
-- 🎯 **Keyboard Shortcuts**: Hidden easter eggs and keyboard navigation
+- **Warm, human design**: white, ink blue and coral palette, soft cards, hand-drawn SVG doodles
+- **Light & dark themes**: follows the OS setting, with a manual toggle
+- **Responsive**: mobile-first, tuned at 375px, 768px and 1280px
+- **Accessible**: semantic landmarks, skip link, visible focus states, WCAG AA contrast
+- **Progressive enhancement**: works fully with JavaScript disabled
+
+## Files
+
+- `index.html`: all content
+- `style.css`: design tokens and styles
+- `main.js`: theme toggle, mobile menu, scroll reveal, active nav link, contact form mailto
 
 ## Sections
 
-- **Hero**: Animated terminal prompt with typing effect
+- **Hero**: Introduction, Upwork rating and key stats
 - **About**: Professional summary and location
-- **Skills**: Technical skills organized by category
 - **Experience**: Detailed work experience at KaimakiWeb
-- **Education**: Academic background from Pokhara University
-- **Projects**: Showcase of major projects with links
-- **Awards & Certificates**: Achievements and certifications
-- **Contact**: Contact information and social links
+- **Selected work**: Showcase of major projects with links
+- **Skills**: Technical skills organized by category
+- **Education & recognition**: Pokhara University, awards and certificates
+- **Testimonials**: What clients say
+- **Contact**: Contact information, social links and email form
 
 ## Getting Started
 
@@ -32,14 +37,14 @@ A retro-style portfolio website with a terminal/CRT monitor aesthetic, showcasin
 
 ### Colors
 
-Edit the CSS variables in `styles.css`:
+Edit the design tokens at the top of `style.css` (light values on `:root`, dark values in the `prefers-color-scheme` / `[data-theme="dark"]` blocks):
 
 ```css
 :root {
-    --terminal-green: #00ff41;
-    --terminal-bg: #0a0e27;
-    --highlight: #ffff00;
-    /* ... more variables */
+    --bg: #FFFFFF;      /* white */
+    --accent: #2949A8;  /* ink blue */
+    --pop: #F26B5B;     /* coral, decorative */
+    /* ... more tokens */
 }
 ```
 
@@ -51,19 +56,6 @@ Edit the HTML in `index.html` to update:
 - Projects
 - Skills
 - Contact information
-
-### Typing Animation
-
-Modify the typing texts in `script.js`:
-
-```javascript
-const typingTexts = [
-    'whoami',
-    'cat about.txt',
-    'ls projects/',
-    'contact --help'
-];
-```
 
 ## Browser Support
 
